@@ -26,22 +26,21 @@
     <h1>Adjust SVG ViewBox</h1>
     <div class="inputs">
       <label>
-        min-x:
-        <input type="number" id="minx" value="0" />
+        X:
+        <input type="number" id="vbX" value="0" />
       </label>
       <label>
-        min-y:
-        <input type="number" id="miny" value="0" />
+        Y:
+        <input type="number" id="vbY" value="0" />
       </label>
       <label>
         width:
-        <input type="number" id="vbwidth" value="400" />
+        <input type="number" id="vbWidth" value="400" />
       </label>
       <label>
         height:
-        <input type="number" id="vbheight" value="200" />
+        <input type="number" id="vbHeight" value="200" />
       </label>
-      <button id="updateBtn">Update ViewBox</button>
     </div>
     <svg
       id="demo-svg"
@@ -59,27 +58,25 @@
         height="100"
         fill="rgba(255, 80, 234, 1)"
       />
+      <text x="450" y="250">An Element Hidden Off Screen</text>
     </svg>
     <script>
-      const minx = document.getElementById('minx');
-      const miny = document.getElementById('miny');
-      const vbwidth = document.getElementById('vbwidth');
-      const vbheight = document.getElementById('vbheight');
+      const vbX = document.getElementById('vbX');
+      const vbY = document.getElementById('vbY');
+      const vbWidth = document.getElementById('vbWidth');
+      const vbhHeight = document.getElementById('vbHeight');
       const svg = document.getElementById('demo-svg');
-      const updateBtn = document.getElementById('updateBtn');
 
       function updateViewBox() {
-        const x = minx.value || 0;
-        const y = miny.value || 0;
-        const w = vbwidth.value || 400;
-        const h = vbheight.value || 200;
+        const x = vbX.value || 0;
+        const y = vbY.value || 0;
+        const w = vbWidth.value || 400;
+        const h = vbHeight.value || 200;
         svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
       }
-
-      updateBtn.addEventListener('click', updateViewBox);
-
-      // Optionally, update on input change
-      [minx, miny, vbwidth, vbheight].forEach(input => {
+      [vbX, vbY, vbWidth, vbHeight].forEach(input => {
         input.addEventListener('input', updateViewBox);
       });
     </script>
+    </body>
+    </html>
