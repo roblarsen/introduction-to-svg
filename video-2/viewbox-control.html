@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SVG ViewBox Demo</title>
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#fafafa" />
+    <style>
+      svg {
+        border: 1px solid black;
+        margin-top: 1em;
+      }
+      .inputs {
+        margin-bottom: 1em;
+      }
+      label {
+        margin-right: 0.5em;
+      }
+      input[type="number"] {
+        width: 4em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Adjust SVG ViewBox</h1>
+    <div class="inputs">
+      <label>
+        min-x:
+        <input type="number" id="minx" value="0" />
+      </label>
+      <label>
+        min-y:
+        <input type="number" id="miny" value="0" />
+      </label>
+      <label>
+        width:
+        <input type="number" id="vbwidth" value="400" />
+      </label>
+      <label>
+        height:
+        <input type="number" id="vbheight" value="200" />
+      </label>
+      <button id="updateBtn">Update ViewBox</button>
+    </div>
+    <svg
+      id="demo-svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="400"
+      height="200"
+      viewBox="0 0 400 200"
+      version="1.1"
+    >
+      <circle cx="50" cy="50" r="50" fill="rgba(80, 153, 255, 1)" />
+      <rect
+        x="150"
+        y="50"
+        width="100"
+        height="100"
+        fill="rgba(255, 80, 234, 1)"
+      />
+    </svg>
+    <script>
+      const minx = document.getElementById('minx');
+      const miny = document.getElementById('miny');
+      const vbwidth = document.getElementById('vbwidth');
+      const vbheight = document.getElementById('vbheight');
+      const svg = document.getElementById('demo-svg');
+      const updateBtn = document.getElementById('updateBtn');
+
+      function updateViewBox() {
+        const x = minx.value || 0;
+        const y = miny.value || 0;
+        const w = vbwidth.value || 400;
+        const h = vbheight.value || 200;
+        svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
+      }
+
+      updateBtn.addEventListener('click', updateViewBox);
+
+      // Optionally, update on input change
+      [minx, miny, vbwidth, vbheight].forEach(input => {
+        input.addEventListener('input', updateViewBox);
+      });
+    </script>
