@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 620 340">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        
+      }
+
+      .st1 {
+        fill: #fff;
+        font-family: ArialMT, Arial;
+        font-size: 12px;
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+
+  <polyline fill="none"
+    stroke="#fff"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="3px" points="17 278 71 259 140 225 269 283 298 269 330 211 346 182 366 170 399 178 421 151 439 157 453 166 496 130 479 83 524 66 560 47 578 45 591 52 588 70 575 63 576 50"/>
+</svg>
